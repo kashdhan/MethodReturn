@@ -33,7 +33,8 @@ namespace MethodReturn
             int num1 = Convert.ToInt16(q1Num1Input.Text);
             int num2 = Convert.ToInt16(q1Num2Input.Text);
            
-            Add(num1, num2);
+            int answer = Add(num1, num2);
+            q1Output.Text = $"{num1} + {num2} = {answer}";
 
 
 
@@ -47,6 +48,11 @@ namespace MethodReturn
             //
             //    Input: 6, 2
             //    The area is 18 units squared
+
+            double length = Convert.ToDouble(lengthInput.Text);
+            double width = Convert.ToDouble(widthInput.Text);
+            double areaA = Area(length, width);
+            q2Output.Text = $"The area is {areaA} units squared.";
 
 
 
@@ -64,6 +70,9 @@ namespace MethodReturn
             //    Input: 200
             //    The total price is $100.00
 
+            double copies = Convert.ToDouble(q3Output.Text);
+            double price = 
+            
 
 
         }
@@ -72,20 +81,22 @@ namespace MethodReturn
         //    adds them together, and then returns the result back to the method call.       
 
 
-        public void Add(int x, int y)
+        public int Add(int x, int y)
         {
             int sum = x + y;
-
-            q1Output.Text = $"{x} + {y} = {sum}";
+            return sum;
+            
         }
-
-
-
         // 2. Create a method called Area, that accepts 2 int parameters, (x and y),
         //    uses them to determine the area of a rectangle , and then returns the 
         //    result back to the method call.
 
+        public double Area(double x, double y)
+        {
+            double area = x * y;
+            return area;
 
+        }
 
         // 3. Create a method called PrintPrice, that accepts 1 int parameter, (prints),
         //    uses it to determine the price for the customer based on the following
@@ -95,6 +106,11 @@ namespace MethodReturn
         //    11 - 50 prints:  $0.75/print
         //    51 - 100 prints:  $0.65/print
         //    101 or over:  $0.50/print
+
+        public void PrintPrice(int prints)
+        {
+
+        }
 
 
     }
